@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>难度3</title>
+	<script>
+		  /* Fibonacci数列的第一项f(0)=1,f(1)=1,现在我们定义第n项f(n)=x*f(n-1)+y*f(n-2)。我们现在需要计算S(n)=f(0)2+f(1)2+f(2)2+...+f(n)2。
+			输入
+			有多组测试数据(<=10000)，每行输入3个数，n，x，y，(2<=n,x,y<=100000000);
+			输出
+			输出S(n)%10007的结果
+			样例输入
+			2 1 1
+			3 2 3
+			样例输出
+			6
+			196*/
+			function fn(n,x,y){
+				function fi(n){
+					if(n<=1){
+						return 1
+					}else{
+						return x*fi(n-1)+y*fi(n-2)
+					}
+				}
+				var sn=0
+				for(var i=0; i<=n; i++){
+					sn+=Math.pow(fi(i),2)
+				}
+				return sn%10007
+			}
+			
+			console.log(fn(2,1,1))
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

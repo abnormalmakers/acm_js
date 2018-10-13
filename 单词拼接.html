@@ -1,0 +1,105 @@
+<script>
+/*给你一些单词，请你判断能否把它们首尾串起来串成一串。
+
+前一个单词的结尾应该与下一个单词的道字母相同。
+
+如
+
+aloha
+
+dog
+
+arachnid
+
+gopher
+
+tiger
+
+rat
+
+可以拼接成：aloha.arachnid.dog.gopher.rat.tiger
+
+输入
+第一行是一个整数N(0<N<20)，表示测试数据的组数
+每组测试数据的第一行是一个整数M,表示该组测试数据中有M(2<M<1000)个互不相同的单词，随后的M行，每行是一个长度不超过30的单词,单词全部由小写字母组成。
+输出
+如果存在拼接方案，请输出所有拼接方案中字典序最小的方案。(两个单词之间输出一个英文句号".")
+如果不存在拼接方案，则输出
+***
+样例输入
+2
+
+6
+aloha
+arachnid
+dog
+gopher
+rat
+tiger
+
+3
+oak
+maple
+elm
+
+样例输出
+aloha.arachnid.dog.gopher.rat.tiger
+****/
+//也就是说，arr中的所有数据必须首尾重复的有arr.length-1组
+//
+//
+//
+//
+//
+//headArr=[a,a,d,g,r,t];
+//endArr=[a,d,g,r,t,r]
+//
+//
+//headArr[1]=endArr[0]
+//for(var i=0; i<arr.length-1; i++){
+//	endArr[i]=headArr[i+1]
+//
+//}
+function sortWord(arr){
+	var headArr=[];
+	var endArr=[]
+	for(var i=0; i<arr.length; i++){
+		headArr.push(arr[i].substr(0,1));
+		endArr.push(arr[i].substr(arr[i].length-1,1))
+	}
+
+	var count=0; 	//判断是否为arr。length-1
+	for(var i=0; i<arr.length; i++){
+		for(var j=0; j<endArr.length; j++){		
+			if(headArr[i]==endArr[j]){
+				count++;
+				endArr.splice(j,1);
+				break;
+			}			
+		}
+	}
+	console.log(endArr[0])
+	if(endArr[0]!=undefined){
+		var endWord=endArr[0]
+		if(count>=arr.length-1){
+			endArr.length=0
+			for(var i=0; i<arr.length; i++){
+				endArr.push(arr[i].substr(arr[i].length-1,1))
+			}
+			//console.log(endArr)
+			for(i=0; i<arr.length; i++){
+				
+			}
+		}else{
+			console.log("***")
+		}
+	}else{
+
+	}	
+}
+var arr=["arachnid","aloha","tiger","rat","gopher","dog"]
+var arr=["ab","ba","ab","ba","ab"]
+sortWord(arr)
+
+
+</script>

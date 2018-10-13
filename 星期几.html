@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>难度2</title>
+	<script>
+		/*Acmer 小鱼儿 埋头ku算一道题 条件：已知给定 一日期 告诉你这一天是 星期 n，让你计算在未来的m的p次方的天数后是星期几?他很苦恼，聪明的你能帮助他吗？
+		输入
+		有多组测试数据，每组测试数据以包含三个整数n，m，p(n<8,m<50,p>10)
+		输出
+		输出过了这么多天后是星期几
+		样例输入
+		3 2 20
+		5 3 100
+		样例输出
+		7
+		2*/
+		var day=3
+		var pastday=Math.pow(2,3)
+		console.log(pastday)
+		var newday=pastday%7+day
+		console.log(pastday%7)
+		if(newday>7){
+			newday=newday-7
+		}
+		console.log(newday)
+
+
+
+	</script>
+
+</head>
+<body>
+	
+</body>
+</html>

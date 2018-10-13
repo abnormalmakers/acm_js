@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		/*假设x是一个正整数，它的值不超过65535(即1<x<=65535)，请编写一个程序，将x分解为若干个素数的乘积。 
+		 Input
+		输入的第一行含一个正整数k (1<=k<=10)，表示测试例的个数，后面紧接着k行，每行对应一个测试例，包含一个正整数x。 
+		 Output
+		每个测试例对应一行输出，输出x的素数乘积表示式，式中的素数从小到大排列，两个素数之间用“*”表示乘法。
+		 Sample Input
+		2
+		11
+		9828
+		 Sample Output
+		11
+		2*2*3*3*3*7*13*/
+		function isPrime(n){
+			if(n==2){
+				return true
+			}
+			for(var i=2; i<n; i++){
+				if(n%i==0){
+					return false
+				}
+			}
+			return true
+		}
+		//console.log(isPrime(48))
+		
+		var num=9828
+		var arr=[]
+		for(var i=2; i<=num; i++){
+			if(num%i==0){
+				arr.push(i)
+				//console.log(num/i,i)
+			}
+		}
+		var result=[]
+		for(var i=0; i<arr.length; i++){
+			if(isPrime(arr[i])){
+				result.push(arr[i])
+			}
+		}
+		//console.log(result)
+		var count=0
+		var newarr=[]
+		while(count<result.length){
+			if(num%result[count]==0){
+				newarr.push(result[count])
+				num=num/result[count]
+
+			}else{
+				count++
+			}
+		}
+		console.log(newarr)
+		
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

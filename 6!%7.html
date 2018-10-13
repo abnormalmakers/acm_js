@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>难度1</title>
+	<script>
+		/*描述
+		数学课上老师出了一道数学题6！%7 = ？，小鱼儿很快就算出来了。不过问题就出来了，
+
+		假如给你一个 整数 p ，让你求（（p-1）！）% p （p是素数），怎么算？？
+
+		输入
+		多组测试数据
+		输入一个数 p （p < 10 ^ 1000000）
+		输出
+		输出结果
+		样例输入
+		7
+		样例输出
+		6*/
+
+		var p=7
+		function fn(n){
+			if(n<=1){
+				return 1
+			}else{
+				return n*fn(n-1)
+			}
+		}
+
+		var result=fn((p-1))%p
+		console.log(result)
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

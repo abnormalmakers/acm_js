@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+	/*输入n个整数，输出其中最小的K个数之和。例如输入4,5,1,1,6,2,7,3,3这9个数字，当k=4，则输出最小的4个数之和为7（1,1,2,3）。
+	输入
+	测试样例组数不超过10
+	每个测试案例包括2行：
+	第一行为2个整数n,k(1<=k<=n<=100000)
+	第二行包含n个整数，每个整数的范围为【1~2000】
+	输出
+	对应每个测试案例，输出最小的k个数之和。
+	样例输入
+	8 4
+	5 2 1 3 8 1 9 3
+	样例输出
+	7*/
+
+	var arr=[5,2,1,3,8,1,9,3]
+	var m=6
+	var newarr=[]
+	var count=m
+	while(count>0){
+		for(var i=0; i<arr.length; i++){
+			var min=Math.min.apply(null,arr)
+			if(min==arr[i]){
+				newarr.push(arr[i])
+				arr.splice(i,1)
+				break
+			}
+		}
+		count--
+	}
+	//console.log(newarr)
+	var sum=0
+	for(var i=0; i<newarr.length; i++){
+		sum+=newarr[i]
+	}
+	console.log(sum)
+	
+
+	</script>
+    
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		/*编写一个程序实现将字符串中的所有"you"替换成"we"
+		输入
+		输入包含多行数据 
+
+		每行数据是一个字符串，长度不超过1000 
+		数据以EOF结束
+		输出
+		对于输入的每一行，输出替换后的字符串*/
+
+		var str="you are what you do"
+		//var newstr=str.replace("you","we")
+		//var newstr=str.replace(/you/,"we")
+
+		//前两种只能替换字符串中匹配的的第一个字符串
+		
+		/*var newstr=str.replace(/you/g,"we")
+		//这种能替换字符串中匹配到的所有的元素
+		console.log(newstr)*/
+
+
+		var arr=str.split(" ")
+		console.log(arr)
+		for(var i=0; i<arr.length; i++){
+			if(arr[i]=="you"){
+				arr.splice(i,1,"we")
+				console.log(arr)
+			}
+		}
+
+		var newstr=arr.join(" ")
+		console.log(newstr)
+
+
+		
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

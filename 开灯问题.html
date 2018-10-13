@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		// 描述
+		// 有n盏灯，编号为1~n，第1个人把所有灯打开，第2个人按下所有编号为2 的倍数的开关（这些灯将被关掉），第3 个人按下所有编号为3的倍数的开关（其中关掉的灯将被打开，开着的灯将被关闭），依此类推。一共有k个人，问最后有哪些灯开着？输入：n和k，输出开着的灯编号。k≤n≤1000
+		// 输入
+		// 输入一组数据：n和k
+		// 输出
+		// 输出开着的灯编号
+
+
+		// n :灯
+		// count :人数
+
+
+		var n = 16;
+		var count =5;
+		var arr = [];
+		for(var i=0;i<n;i++){
+			arr[i] = 0;//初始化全部关掉
+		}
+		//console.log(arr)
+		
+		//执行开关灯函数
+		function fn(arr,num){
+			for(var i=0;i<arr.length;i++){
+				if((i+1)%num==0){
+					arr[i] = Math.abs(arr[i]-1);
+				}
+				/*if((i+1)%num==0){
+					if(arr[i]==0){
+						arr[i]=1
+					}else{
+						arr[i]=0
+					}
+				}*/
+			}
+		};
+
+		//人数
+		for(var i=1;i<=count;i++){
+			fn(arr,i);
+		}
+		console.log(arr);
+		for(var i=0; i<arr.length; i++){
+			if(arr[i]==1){
+				console.log(i+1)
+			}
+		}
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

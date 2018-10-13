@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		
+		/*求n，m的最大公约数和最小公倍数 
+		 max 最大公约数
+		 min 最小公倍数*/
+
+		
+		function fn(n,m){
+			var arr=[] //保存n的公约数
+			var newarr=[] //保存n的公倍数
+			for(var i=0; i<n; i++){
+				if(n%i==0 && m%i==0){
+					arr.push(i)
+				}
+			}
+			//console.log(arr)
+			var max=Math.max.apply(null,arr)
+			
+			
+			var nmarr=[n,m]
+			var nmMax=Math.max.apply(null,nmarr)
+			var nmproduct=n*m
+			for(var i=nmMax; i<=nmproduct; i++){
+				if(i%n==0 && i%m==0){
+					newarr.push(i)
+				}
+			}
+			var min=Math.min.apply(null,newarr)
+			console.log("最大公约数"+max)
+			console.log("最小公倍数"+min)
+		}
+		
+		fn(n,m)
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

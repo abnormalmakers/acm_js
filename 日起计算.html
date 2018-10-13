@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>难度1</title>
+	<script>
+		/*描述
+		如题，输入一个日期，格式如：2010 10 24 ，判断这一天是这一年中的第几天。
+		输入
+		第一行输入一个数N（0<N<=100）,表示有N组测试数据。后面的N行输入多组输入数据，每行的输入数据都是一个按题目要求格式输入的日期。
+		输出
+		每组输入数据的输出占一行，输出判断出的天数n
+		样例输入
+		3
+		2000 4 5
+		2001 5 4
+		2010 10 24
+		样例输出
+		96
+		124
+		297*/
+
+		var year=2008
+		var month=12
+		var day=31
+		function fn(n){
+			if(n%2==0){
+				return true //偶数
+			}
+			return false
+		}
+		var smallmonth=[]
+		var bigmonth=[]
+		for(var i=1; i<month; i++){
+			if(i<8){
+				if(fn(i)&&i!=2){
+					smallmonth.push(i)
+				}
+				if(fn(i)==false){
+					bigmonth.push(i)
+				}
+			}else{
+				if(fn(i)){
+					bigmonth.push(i)
+				}
+				if(fn(i)==false){
+					smallmonth.push(i)
+				}
+			}	
+		}
+		function isleap(n){
+			if(n%4==0){
+				if(n%100==0&&n%400!=0){
+					return false
+				}
+				return true
+			}
+		}
+		var allday=smallmonth.length*30+bigmonth.length*31+day
+		if(isleap(year)){
+			allday+=29
+		}else{
+			allday+=28
+		}
+		console.log(allday)
+
+		console.log(smallmonth)
+		console.log(bigmonth)
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

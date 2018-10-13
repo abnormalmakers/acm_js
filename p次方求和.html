@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>难度3</title>
+	<script>
+		/*一个很简单的问题，求1^p+2^p+3^p+……+n^p的和。
+		输入
+		第一行单独一个数字t表示测试数据组数。接下来会有t行数字，每行包括两个数字n,p，
+		输入保证0<n<=1000,0<=p<=1000。
+		输出
+		输出1^p+2^p+3^p+……+n^p对10003取余的结果，每个结果单独占一行。
+		样例输入
+		2
+		10 1
+		10 2
+		样例输出
+		55
+		385
+*/
+		//n在递归
+		function dg(n,p){
+			if(n==1){
+				return 1
+			}
+			return Math.pow(n,p)+dg(n-1,p)
+		}
+		
+		console.log(dg(10,2))
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

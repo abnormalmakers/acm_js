@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<script type="text/javascript">
+/*在密室逃脱游戏中，大家被困在一个密室中，为了逃出密室，需要找到正确的数字密码，于是大家分头行动，分别找到了密码的子序列，而后大家将得到的线索集中整理分析，大家想知道密码最少是多少位。 
+
+ Input
+第一行输入一个整数T，表示数据组数。接下来T组数据，对于每组数据，第一行输入一个整数n (1<=n<=7)，表示有n个人，接下来第2到n+1行每行输入一串数字，分别表示第i个人得到的密码子序列（长度<=6）。 
+
+ Output
+对于每组数据，请输出个数字，即可行密码的最短长度。 
+
+ Sample Input
+1
+3
+123
+14
+21
+ Sample Output
+5*/
+	var arr=[123,14,21]
+	var newarr=new Array
+	for(var i=0; i<arr.length; i++){
+		arr[i]+=""
+		newarr.push(arr[i].split(""))
+	}
+	//console.log(newarr)
+
+	//是否是真子集
+	arr[i][0]<=arr[j]
+	for(var i=0; i<arr.length; i++){
+		arr[i]+=""
+		for(var j=0; j<arr.length; j++){
+			
+		}
+	}
+	
+
+
+
+
+
+
+	var obj={}
+	for(var i=0; i<newarr.length; i++){
+		for(var j=0; j<newarr[i].length; j++){
+			if(!obj[arr[i][j]]){
+				obj[arr[i][j]]=1
+			}
+		}
+	}
+	//console.log(obj)
+	var sum=0
+	for(var i in obj){
+		sum+=obj[i]
+	}
+	//console.log(sum)
+	
+
+
+</script>
+
+</head>
+<body>
+	
+</body>
+</html>

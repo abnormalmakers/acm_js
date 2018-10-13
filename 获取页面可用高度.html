@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#scroll{height: 3px; position: fixed; top: 0; left: 0; background: blue;}
+	</style>
+	<script>
+	window.onload=function(){
+		var scroll=document.getElementById('scroll');
+		var bodyw=document.body.offsetWidth;
+		alert(bodyw)
+		alert(document.body.clientHeight)
+		alert(document.documentElement.clientHeight)
+		//scroll的width/body。width=滚动条到顶部距离/滚动条高度
+		window.onscroll=function(){
+			var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+			scroll.style.width=scrollTop/(document.body.clientHeight-document.documentElement.clientHeight)*bodyw+"px";
+		}
+	}
+	</script>
+</head>
+<body style="height:4000px">
+	<div id="scroll"></div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>难度1</title>
+	<script>
+		/*小明最近遇到了一个素数题，是给你一个正整数N（2=<N<=1000）让你求出2~N的所有素数乘积的后六位。
+		输入
+		第一行输入一个正整数T(T<=20)表示有T组数据
+		每组数据占一行，输入一个正整数N（2=<N<=1000）
+		输出
+		每组数据输出占一行，输出2~N素数乘积的后六位
+		样例输入
+		3
+		3
+		6
+		43
+		样例输出
+		6
+		30
+		670030*/
+		function fn(n){
+			if(n<=2){
+				return true
+			}
+			for(var i=2; i<n; i++){
+				if(n%i==0){
+					return false
+				}
+			}
+			return true
+		}
+		var product=1
+		for(var i=2; i<44; i++){
+			if(fn(i)){
+				product*=i
+			}
+		}
+		console.log(product)
+		product+=""
+		var len=product.length
+		/*12345678
+		  012345
+		     678
+		     8-3
+		     只输出后三位
+		     从第5位开始取*/
+
+			var str=product.slice(1,3)
+		console.log(str)
+		
+
+
+	</script>
+
+</head>
+<body>
+	
+</body>
+</html>

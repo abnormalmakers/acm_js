@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>难度3</title>
+	<script>
+	/*描述
+	题意很简单，给一个长度为n的序列，问至少删除序列中多少个数，使得删除后的序列中的最大值<= 2*最小值
+	输入
+	多组测试数据，每组测试数据包含两行。
+	第一行一个整数n( n <= 10^5)，序列中元素的个数。
+	第二行依次输入n个数a1，a2……an，（1 <= ai <= 10^9）以空格分开。
+	输出
+	输出占一行，至少要删除数的个数。
+	样例输入
+	6
+	5 4 3 3 8 6
+	样例输出
+	1*/
+	var arr=[9,7,3,3,9,7]
+	var max=Math.max.apply(null,arr)
+	var min=Math.min.apply(null,arr)
+	arr.sort(function(a,b){
+		return b-a
+	})
+	var len=arr.length
+	var count=0
+	for(var i=0; i<len; i++){
+		if(arr[0]>arr[arr.length-1]*2){
+			arr.splice(0,1)
+			count++
+		}
+	}
+	var result=len-arr.length
+	console.log(result)
+	console.log(count)
+
+
+	
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

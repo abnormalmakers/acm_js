@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>难度3</title>
+	<script type="text/javascript">
+		   /*如题目，N字串就是一个字符串能够形成N型的字符串
+			比如1234321234
+			你也可以看做是两个回文字符串，1234321和4321234
+			你需要做的是判断一个字符串的子串中是否存在N字串*/
+
+			var num=1234321234
+
+			num+=''
+			console.log(num)
+			var arr=num.split("")
+			console.log(arr)
+			arr.reverse()
+			console.log(arr)
+			var str=arr.join("")
+			console.log(str)
+
+			//判断回文
+			
+
+			/*function fn(line){
+				line+=""
+				for(var i=0,j=line.length-1; i<j; i++,j--){
+					if(line[i]!= line[j]){
+						return false
+					}else{
+						return true
+					}
+				}
+			}*/
+			/*function fn(line){
+				line+=""
+				return line==line.split("").reverse().join("")
+			}
+			console.log(fn(1234321234))*/
+
+			//是否存在line
+
+
+
+
+			
+			
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

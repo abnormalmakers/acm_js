@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		var arr=[]
+		for(var i=1; i<=8; i++){
+			for(var j=1; j<=8; j++){
+				if(i!=j){
+					arr.push([i,j])
+				}
+			}
+		}
+		//console.log(arr)
+		function contact(queenx1,queenx2,queeny1,queeny2){
+			var x=queenx1-queenx2
+			var y=queeny1-queeny2
+			if(x!=0&&y!=0&&x/y!=1){
+				return true
+			}
+			return false
+		}
+		for(var i=0; i<arr.length; i++){
+			arr[i][0]
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		/*描述
+		    小珂是一名初中生，她现在很苦恼，因为老师布置了一个让她苦恼的作业，你能不能帮助她呢？题目信息如下。
+		        已知二元一次方程 a*x+b*y=n， 判断这个二元一次方程有没有整数解，x,y为未知数，其中a，b，n都为整数且不等于零，同时满足0<a,b,n<2^16-1。
+		输入
+		第一行有一个整数0<n<=1000000表示有 n组测试数据,接下来的每一行有三个整数分别是a,b,n
+
+		输出
+		存在整数x和y使得方程有解，输出“Yes”，否则输出“No”
+
+		样例输入
+		2
+		2 4 2
+		3 9 7
+		样例输出
+		Yes
+		No*/
+		/*a=2 b=9 n=2   2*x+9*y=2是否存在整数解  3*x+9*y=7*/
+		var a=2
+		var b=9;
+		var n=2;
+		
+		function count(a,b,n){
+			var flag=false
+			for(var x=0; a*x<=n; x++){
+				for(var y=0; b*y<=n; y++){
+					if(a*x+b*y==n&&parseInt(x)==parseFloat(x)&&parseInt(y)==parseFloat(y)){
+						flag=true
+					}
+				}
+			}
+			if(flag){
+				return true
+			}
+			return false
+		}
+		console.log(count(5,2,9))
+		
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

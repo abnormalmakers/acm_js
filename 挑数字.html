@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>难度2</title>
+	<script type="text/javascript">
+		  /*小杜一直都不喜欢数学，但是他特爱语文，所以对英语也非常感兴趣。所以他也就有个习惯，一看到字母里面插有数字，一定要他全部划去。
+		现在给你纸，纸上有很多既含有字母，又含有数字的句子（还包括一些标点符号）。你需要将数字找出来放在一边，并组成一个最大的数。然后逆序输出所有字母，和那个最大的数。
+		输入
+		第一行：N表示有多少组数据。
+		接下来的N行，每行有一句话，长度不超过1000。
+		输出
+		每句话对应输出两行。
+		第一行输出字母的总个数及其所有的字母（按原来输入的相反的顺序输出），中间需要一个空格分开。
+		第二行输出那个数字的总个数及最大的数,中间需要一个空格分开。
+		（如果没有字母或数字，则对应只需要输出一个0）
+		样例输入
+		2
+		abcabc123abc.
+		aaa
+		样例输出
+		9 cbacbacba
+		3 321
+		3 aaa
+		0*/
+
+		var str="abcabc123abc."
+		var arr=str.split("")
+		var strarr=[]
+		for(var i=0; i<arr.length; i++){
+			if(isNaN(arr[i])){
+				strarr.push(arr[i])
+			}
+		}
+		//console.log(strarr)
+		for(var i=0; i<arr.length; i++){
+			for(var j=0; j<arr.length; j++){
+				if(isNaN(arr[j])){
+					arr.splice(j,1)
+				}
+			}
+		}
+		//console.log(arr)
+		arr.sort(function(a,b){
+			return b-a
+		})
+		var newstr=arr.join("")
+		var numcount=newstr.length
+		var newnum=parseInt(newstr)
+		console.log(numcount,newnum)
+		//console.log(strarr)
+		for(var i=0; i<strarr.length; i++){
+			var reg= /^[A-Za-z]+$/;
+			if(!reg.test(strarr[i])){
+				strarr.splice(i,1)
+			}
+		}
+		//console.log(strarr)
+		strarr.reverse()
+		var zimu=strarr.join("")
+		var length=zimu.length
+		console.log(length,zimu)
+
+
+
+			
+
+
+
+
+
+
+
+			
+			
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

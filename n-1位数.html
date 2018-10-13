@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		/*描述
+		已知w是一个大于10但不大于1000000的无符号整数，若w是n(n≥2)位的整数，则求出w的后n-1位的数。
+		输入
+		第一行为M，表示测试数据组数。
+		接下来M行，每行包含一个测试数据。
+		输出
+		输出M行，每行为对应行的n-1位数（忽略前缀0）。如果除了最高位外，其余位都为0，则输出0。*/
+
+		/*var w=20234
+		var neww=w.toString()
+
+		var arr=neww.split("")
+
+		arr.splice(0,1)
+
+		var newstr=arr.join("")
+
+		console.log(newstr)*/
+
+		/*var w=20234
+		var neww=w.toString()
+
+		var arr=neww.split("")
+
+		var newarr=arr.slice(1)
+
+		var newstr=newarr.join("")
+
+		console.log(newstr)*/
+
+		
+		var w=parseInt(Math.random()*100000+10)
+
+		console.log(typeof(w))
+		var neww=w.toString()
+		console.log(typeof(w))
+		var newstr=neww.substring(1)
+		//var newstr=neww.slice(1)
+		var newNum=parseInt(newstr)
+		console.log(w)
+		console.log(newNum)
+
+
+	
+
+		
+		
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

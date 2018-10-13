@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>难度2</title>
+	<script>
+		/*zyc最近比较无聊，于是他想去做一次无聊的统计一下。他把全校同学的地址都统计了一下（zyc都将地址转化成了编码），然后他希望知道那个地方的同学最多(如果同学最多的地方有多个，输出编号最小的一个)。
+		输入
+		第一行输入一个正整数T（0<T<=11）表示有T组测试数据
+		每组测试数据第一行输入一个正整数N（0<N<200000）表示有N个编号，随后输入N个编码（编码由数字组成且少于十位）
+		输出
+		每组数据输出占一行输出出现次数最多的编号
+		样例输入
+		1
+		5
+		12345 456 45 78 78
+		样例输出
+		78*/
+
+		var arr=[12345,456,45,78,78]
+		var obj={}
+		for(var i=0; i<arr.length; i++){
+			if(!obj[arr[i]]){
+				obj[arr[i]]=1
+			}else{
+				obj[arr[i]]++
+			}
+		}
+		//console.log(obj)
+		var max=0
+		var num=0
+		for(var i in obj){//i是key  obj[i]是值
+			if(obj[i]>max){
+				max=obj[i]
+				num=i
+			}
+			//console.log(i) 
+			//console.log(obj[i])
+		}
+		console.log(max)
+		console.log(num)
+		
+
+		
+		
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>难度3</title>
+	<script>
+	/*给你一个非负数整数n，判断n是不是一些数（这些数不允许重复使用，且为正数）的阶乘之和，如9=1！+2!+3，如果是，则输出Yes，否则输出No；
+	输入
+	第一行有一个整数0<m<100,表示有m组测试数据；
+	每组测试数据有一个正整数n<1000000;
+	输出
+	如果符合条件，输出Yes，否则输出No;*/
+
+	var result=9
+	var arr=[]
+	function fn(n){
+		if(n<=1){
+			return 1
+		}else{
+			return n*fn(n-1)
+		}
+	}
+
+	function max(){
+		for(var i=1; i<100; i++){
+			if(fn(i)>=result){
+				return i
+			}
+		}
+	}
+	//console.log(max())//i=11
+	var maxi=max()
+	function min(){
+		for(var i=1; i<100; i++){
+			if(fn(i)<=result){
+				arr.push(i)
+			}
+		}
+	}
+	min()
+	var mini=arr[arr.length-1]
+	var flag=true;
+	 var sum = 0; //1-9阶层总和
+	 function aa(){
+		for(i=1; i<=6; i++){
+		    var k = 1; 
+			for(j=1;j<=i;j++){
+				k = k * j;	//k*=j	
+			}
+			console.log(k)
+		   	sum = sum + k;
+		   	/*if(sum==result){
+		   		flag=true
+		   		return
+			}else{
+				flag=false
+			}*/
+		}
+		if(flag==true){
+			return true
+		}else{
+			return false
+		}
+	 }
+	  
+	
+	
+	console.log(aa())
+	
+	
+	
+	
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

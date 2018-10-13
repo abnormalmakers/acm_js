@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		/*n个元素的集合{1,2,...,n}可以划分若干个非空子集。例如，当n=4时，集合{1,2,3,4}可以划分为15个不同的非空子集如下:
+		{{1},{2},{3},{4}},
+		{{1,2},{3},{4}},
+		{{1,3},{2},{4}},
+		{{1,4},{2},{3}},
+		{{2,3},{1},{4}},
+		{{2,4},{1},{3}},
+		{{3,4},{1},{2}},
+		{{1,2},{3,4}},
+		{{1,3},{2,4}},
+		{{1,4},{2,3}},
+		{{1,2,3},{4}},
+		{{1,2,4},{3}},
+		{{1,3,4},{2}},
+		{{2,3,4},{1}},
+		{{1,2,3,4}}
+		给定正整数n(1<=n<=20),计算出n个元素的集合{1,2,...,n} 可以化为多少个不同的非空子集。
+		 Input
+		多组输入数据，每组数据1行，表示元素个数n.
+		 Output
+		对于每组数据，输出一行一个数，表示不同的非空子集的个数。
+		 Sample Input
+		2
+		4
+		 Sample Output
+		2
+		15*/
+		var num=4
+		// n!/m!(n-m)!
+		//c41+c42+c43+c44
+		function jc(n){
+			if(n<=1){
+				return 1
+			}
+			return n*jc(n-1)	
+		}
+		
+		function zuhe(m){
+			if(num==m){
+				return 1
+			}
+			return jc(num)/(jc(m)*jc(num-m))
+		}
+		// console.log(zuhe(1))
+		// console.log(zuhe(2))
+		// console.log(zuhe(3))
+		// console.log(zuhe(4))
+		function dg(n){
+			if(n<=1){
+				return 1
+			}
+			return n+dg(n)
+		}
+		var sum=0
+		for(var i=1; i<=num; i++){
+			sum+=zuhe(i)
+		}
+		console.log(sum)
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>难度2</title>
+	<script>
+		/*一组数据按从小到大的顺序依次排列，处在中间位置的一个数叫做中位数。
+		比如 1 5 10 11 9  其中位数就是9.因为排序过后，9处在中间位置。
+		现在给你一些数，请你求出其中位数。*/
+
+		var arr=[22,33,11,65,3,4,77,99,21,56,24]
+
+		
+
+		/*中位数索引：Math.ceil(arr.length/2)
+		之前<arr[Math.ceil(arr.length/2)]<之后*/
+		function mid(){
+		//slice方法end取不到
+		var smallarr=arr.slice(0,Math.ceil((arr.length-1)/2)+1)
+		var bigarr=arr.slice(Math.ceil((arr.length-1)/2))
+
+		//console.log(smallarr)
+		//console.log(bigarr)
+
+		smallarr.sort(function(a,b){
+			return a-b
+		})
+		bigarr.sort(function(a,b){
+			return a-b
+		})
+		var blankarr=[]
+		var newarr=blankarr.concat(smallarr,bigarr)
+		//console.log(newarr)
+
+		var obj={}
+		var array=[]
+		for(var i=0; i<newarr.length; i++){
+			if(!obj[newarr[i]]){
+				obj[newarr[i]]=1
+				array.push(newarr[i])
+			}
+		}
+		//console.log(array)
+		array.sort(function(a,b){
+			return a-b
+		})
+		//console.log(array)
+		function a(){
+			return array[Math.ceil((array.length-1)/2)]
+		}
+		return a()
+}
+	
+	console.log(mid())
+	arr.sort(function(a,b){
+			return a-b
+		})
+	console.log(arr)
+
+		
+		
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

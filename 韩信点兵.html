@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	/*3人一排排尾剩2人
+	5人一排排尾剩4人
+	7人一排排尾剩5人
+	总人数89*/
+
+	function num(a,b,c){
+		if(a<3&&b<5&&c<7){
+			for(var n=10; n<100; n++){
+				if(n%3==a &&n%5 ==b &&n%7==c){
+					console.log(n)
+				}
+			}
+		}
+		
+	}
+	
+	num(2,3,4)
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

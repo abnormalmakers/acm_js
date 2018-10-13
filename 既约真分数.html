@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		/*输入一个自然数N。
+		请写一个程序来增序输出分母小于等于N的既约真分数。
+		 Input
+		输入包含多组测试数据，请处理到EOF结束。
+		每组数据包括,一个自然数N（1<=N<=160）。
+		 Output
+		每个分数单独占一行。
+		 Sample Input
+		5
+		 Sample Output
+		0/1
+		1/5
+		1/4
+		1/3
+		2/5
+		1/2
+		3/5
+		2/3
+		3/4
+		4/5
+		1/1*/
+
+		var n=5
+		var arr=[]
+		for(var i=0; i<5; i++){
+			for(var j=1; j<=5; j++){
+				if(i<=j){
+					arr.push(i/j)
+				}	
+			}
+		}
+		var newarr=[]
+		var obj={}
+		for(var i=0; i<arr.length; i++){
+			if(!obj[arr[i]]){
+				obj[arr[i]]=1
+			}
+		}
+		
+		console.log(obj)
+		for(var i in obj){
+			newarr.push(i)
+		}
+		console.log(newarr)
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

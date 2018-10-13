@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>难度3</title>
+	<script>
+	/*给你两个数a和b,你的任务是计算出1在a和b之间出现的次数,比如说，如果a=1024,b=1032，那么a和b之间的数就是：
+	1024 1025 1026 1027 1028 1029 1030 1031 1032
+	则有10个1出现在这些数中。
+	输入
+	输入不会超过500行。每一行有两个数a和b，a和b的范围是0 <= a, b <= 100000000。输入两个0时程序结束，两个0不作为输入样例。
+	输出
+	对于每一对输入的a和b，输出一个数，代表1出现的个数。
+	样例输入
+	1 10
+	44 497
+	346 542
+	0 0
+	样例输出
+	2
+	185
+	40*/
+	/*var a=1024
+	var b=1032
+	var arr=[]
+	for(var i=44; i<=497; i++){
+		arr.push(i)
+	}
+	var num=0
+	for(var i=0; i<arr.length; i++){
+		arr[i]+=""
+		for(var j=0; j<arr[i].length; j++){
+			if(arr[i][j]==1){
+				num++
+			}
+		}
+	}
+	console.log(num)*/
+
+	function fn(n){
+		if(n<=1){
+			return 1
+		}else{
+			return n*fn(n-1)
+		}
+	}
+	console.log(fn(60))
+	var arr=[]
+	var n=fn(60)
+	while(n!=0){
+		var mod=n%10
+		arr.push(mod)
+		n=parseInt(n/10)
+	}
+	console.log(arr)
+	arr.reverse()
+	var str=arr.join("")
+	console.log(str)
+
+	
+	
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

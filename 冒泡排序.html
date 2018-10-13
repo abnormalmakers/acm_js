@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+	var a=[1,23,64,34,26,6.90,,56,98,44]
+	for(var i=0; i<a.length; i++){
+		for(var j=0; j<a.length-1-i; j++){
+			if(a[j]>a[j+1]){
+				var item=a[j]
+				a[j]=a[j+1]
+				a[j+1]=item
+			}
+		}
+	}
+	console.log(a)
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

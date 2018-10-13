@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+/*给出n，求f(n)。
+ Input
+第一行一个正整数T，表示数据组数。接下来T行，每行一个正整数n。 T<=20，n<=2015000000。 
+ Output
+对于每组数据，输出一行f(n)。
+ Sample Input
+2
+1
+20150001
+ Sample Output
+2015
+20152014
+ */
+function fn(n){
+    if(n<20150001){
+        return n+2014
+    }else{
+        return fn(fn(n-2015))
+    }
+}
+console.log(fn(20150001))
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

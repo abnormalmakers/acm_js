@@ -1,0 +1,67 @@
+<script>
+/*计算n!的十进制表示最后有多少个0
+输入
+第一行输入一个整数N表示测试数据的组数(1<=N<=100)
+每组测试数据占一行，都只有一个整数M(0<=M<=10000000)
+输出
+输出M的阶乘的十进制表示中最后0的个数
+比如5!=120则最后的0的个数为1*/
+
+/*
+	3
+	60
+	100
+	1024
+	23456
+	8735373
+
+	样例输出
+	0
+	14
+	24
+	253
+	5861
+	2183837
+*/
+	var n=60
+	function dg(n){
+		if(n<=1){
+			return 1
+		}else{
+			return n*dg(n-1)
+		}
+	}
+	var num=dg(n)
+	console.log(num)
+	var arr=[]
+	var result=""
+	while(num!=0){
+		var mod=num%10;
+		arr.push(mod)
+		num=parseInt(num/10)
+	}
+	while(arr.length>0){
+		result+=arr.pop()
+	}
+
+
+	console.log(result)
+
+
+
+	/*var newarr=result.split("")
+	var aa=newarr.reverse()
+	var count=0
+	console.log(result)
+	console.log(aa)
+	for(var i=0; i<aa.length; i++){
+		if(aa[i]==0){
+			count++
+		}else{
+			break
+		}
+	}
+	console.log(count)*/
+
+
+</script>

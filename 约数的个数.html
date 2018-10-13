@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>难度3</title>
+	<script>
+	/*笨蛋一直追求着一个梦，成为这个世界上最富有的人，可惜一直壮志未酬，这也没关系，但自己可以给自己编个美丽的童话，这样可以满足自己的虚荣心（阿Q胜利法）。他首先给这个世界每一个人编个号x（即一个号码对应一个人），x的约数的个数就是这个人所拥有财富数，因为编号由笨蛋来编，所以笨蛋，可以给自己任意一个编号。笨蛋希望自己的财富尽量多且编号尽量小。在1到n（世界总人口）找个这样的编号可不怎么容易，但笨蛋总能快速的找出那个属于他的编号，你知道他怎么找出来的吗？
+	输入
+	第一行一个t,表示t组测试数据
+	接下来t行，给出世界总人口 n（n>=1）
+	输出
+	输出笨蛋的编号和它所拥有的财富
+	样例输入
+	2
+	6
+	2
+	样例输出
+	6 4
+	2 2*/
+
+	var n=8
+	var arr=[]
+	var obj={}
+	for(var i=1; i<=n; i++){
+		arr.push(i)
+	}
+
+	for(var i=0; i<arr.length; i++){
+		if(!obj[arr[i]]){
+			obj[arr[i]]=0
+		}
+		for(var j=1; j<=arr[i]; j++){
+			if(arr[i]%j==0){
+				obj[arr[i]]++
+			}	
+		}
+	}
+	//console.log(obj)
+	var max=0
+	for(var i in obj){
+		//找到最大obj[i]，输出i，如果有相同的obj[i]，输出较小的i
+		//console.log(i,obj[i])
+		if(max<obj[i]){
+			max=obj[i]
+		}
+	}
+	for(var i in obj){
+		if(max==obj[i]){
+			console.log(i)
+			break //约数相同多时，取到第一个立刻跳出循环，不取第二个，保证编号尽量小
+		}
+	}
+	</script>
+	
+    
+</head>
+<body>
+	
+</body>
+</html>

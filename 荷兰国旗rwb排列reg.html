@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>难度1</title>
+	<script>		 
+	/*荷兰国旗有三横条块构成，自上到下的三条块颜色依次为红、白、蓝。现有若干由红、白、蓝三种颜色的条块序列，要将它们重新排列使所有相同颜色的条块在一起。本问题要求将所有红色的条块放最左边、所有白色的条块放中间、所有蓝色的条块放最右边。
+	输入
+	第1行是一个正整数n（n<100），表示有n组测试数据。接下来有n行，每行有若干个由R，W，B三种字符构成的字符串序列，其中R，W和B分别表示红、白、蓝三种颜色的条块,每行最多有1000个字符。
+	输出
+	对输入中每行上由R，W，B三种字符构成的字符串序列，将它们重新排列使所有相同颜色的条块在一起，满足前述要求。
+	样例输入
+	3
+	BBRRWBWRRR
+	RRRWWRWRB
+	RBRW 
+	样例输出
+	RRRRRWWBBB
+	RRRRRWWWB
+	RRWB */
+
+
+	//数组排序方法
+	/*var str="BBRRWBWRRR"
+	var arr=str.split("")
+	var b=[]
+	var w=[]
+	var r=[]
+	for(var i=0; i<arr.length; i++){
+		if(arr[i]=="B"){
+			b.push(arr[i])
+		}else if(arr[i]=="W"){
+			w.push(arr[i])
+		}else{
+			r.push(arr[i])
+		}
+	}
+	var result=b.concat(w)
+	var finalarr=result.concat(r)
+	var newstr=finalarr.join("")
+	console.log(newstr)*/
+
+	//=======================================================
+	//字符串排序方法   数字，汉字，英文字符
+	/*var arr = ['a', 'b', '212', '123', '啊', '不'];
+    
+    arr.sort(function(a, b){return (a + '').localeCompare(b + '')});
+    console.log(arr)*/
+
+    //=======================================================
+    
+    /*var str="qwertyuiopasdfghjklzxcvbnm"
+    var arr=str.split("")
+    arr.sort(function(a,b){
+    	return (a+"").localeCompare(b+"")
+    })
+    var newstr=arr.join('')
+    console.log(newstr)*/
+
+    //replace方法并不能改变字符串本身的，replace方法只能返回一个处理后的字符串而已
+    var str="BBRRWBWRRR"
+    for(var i=0; i<str.length; i++){
+    	if(str[i]=="B"){
+    		//var reg=new RegExp(str[i]) //只能改变第一个
+    		var reg=new RegExp(str[i]，"g")
+    		var a=str.replace(reg,"0")
+       	}else if(str[i]=="W"){
+    		str[i]="b"
+    	}else{
+    		str[i]="c"
+    	}
+    }
+    console.log(a)
+    console.log(str)
+    var arr=str.split("")
+    arr.sort(function(a,b){
+    	return a-b
+    })
+    console.log(arr)
+    for(var i=0; i<arr.length; i++){
+    	if(arr[i]==0){
+    		arr[i]="B"
+    	}else if(str[i]==1){
+    		arr[i]="W"
+    	}else{
+    		arr[i]="R"
+    	}
+    }
+    var newstr=arr.join("")
+    console.log(newstr)
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

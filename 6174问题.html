@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+			/*假设你有一个各位数字互不相同的四位数，把所有的数字从大到小排序后得到a,从小到大后得到b,然后用a-b替换原来这个数，并且继续操作。例如，从1234出发，依次可以得到4321-1234=3087、8730-378=8352、8532-2358=6174，又回到了它自己！现在要你写一个程序来判断一个四位数经过多少次这样的操作能出现循环，并且求出操作的次数
+
+			比如输入1234执行顺序是1234->3087->8352->6174->6174,输出是4
+
+			输入
+			第一行输入n,代表有n组测试数据。
+			接下来n行每行都写一个各位数字互不相同的四位数
+			输出
+			经过多少次上面描述的操作才能出现循环
+			function fn(n){
+				n=1234
+				千分位:a=parseInt(1234/1000)
+				th=a.toString()
+				百分位:b=parseInt((1234-a*1000)/100)
+				hun=b.toString()
+				十分位:c=parseInt((1234-a*1000-b*100)/10)
+				tens=c.toString()
+				个位：d=1234-a*1000-b*100-c*10
+				unit=d.toString()
+
+				arr=[th,hun,tens,unit]
+				
+				var n=arr[0]+arr[1]+arr[2]+arr[3]
+
+				
+				arr.sort(function(a,b){a-b}) 有大到小
+				var bs=arr[0]+arr[1]+arr[2]+arr[3]
+				arr.sort(function(a,b){b-a}) 由小到大
+				var sb=arr[0]+arr[1]+arr[2]+arr[3]
+
+				var newn=bs-sb
+
+			}
+			function num(){
+				for(var i=0; i>=0 i++){
+					fn(n)
+					if(n==newn){
+						return i
+					}
+				}
+			}
+			fn(3921)
+			console.log(num())*/
+			var cishu=0
+			function fn(n){
+
+				var arr=[]
+				var a=parseInt(n/1000)
+				var th=a.toString()
+				arr.push(th)
+				var b=parseInt((n-a*1000)/100)
+				var hun=b.toString()
+				arr.push(hun)
+				var c=parseInt((n-a*1000-b*100)/10)
+				var tens=c.toString()
+				arr.push(tens)
+				var d=n-a*1000-b*100-c*10
+				var unit=d.toString()
+				arr.push(unit)
+				
+				var num=parseInt(arr[0]+arr[1]+arr[2]+arr[3])
+
+				arr.sort(function(small,big){
+					return small-big
+				})
+				
+				var sb=parseInt(arr[0]+arr[1]+arr[2]+arr[3])
+				
+
+				arr.sort(function(small,big){
+					return big-small
+				})
+				var bs=parseInt(arr[0]+arr[1]+arr[2]+arr[3])
+				
+				var newnum=bs-sb
+				//console.log(newn)
+				cishu++
+				if(newnum == num){
+					console.log(cishu)
+				}else{
+					fn(newnum)	
+				}
+			}
+			fn(9721)
+
+			
+			
+
+
+
+
+				
+				
+			//console.log(newn,zifuchuann)
+
+					
+
+						
+	
+			
+			
+
+				/*if(fn(3921)){
+					console.log(i)
+				}*/
+			
+			/*
+			for(var i=1; i<10; i++){
+				fn(1234)
+				if(fn(1234)){
+					//console.log(i)
+				}
+			}*/
+			
+			/*function num(){
+				
+				for(var i=0; i<100; i++){
+
+					if(zifuchuann==newn){
+						console.log(i)
+					}
+				}
+			}
+			num()*/
+			
+
+
+			
+			
+			
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

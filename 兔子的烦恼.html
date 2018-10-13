@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>难度2</title>
+	<script>
+		/*在一座山上有n个山洞（每个洞从0~n-1分别编号），这山上有一只兔子躲在山洞里，有一只狼，从编号为0的山洞开始入洞，每隔m-1个洞，再次入洞抓兔子，现在兔子想知道是否有能避免这场灾难的山洞？
+		例如：m=2 and n=6, 狼将要进入的山洞号为：0,2,4，可避难的山洞为：1,3,5;
+		输入
+		有多组测试数据，不超过11组;
+		每组有两个整数m,n(0<m,n<=10000000);
+		注意：程序以文件结束符“EOF”结束输入。
+		输出
+		兔子能避免这场灾难输出可避难山洞的总数和所有可避难山洞的编号（从小到大输出），否则输出NO;
+		样例输入
+		1 2
+		2 2
+		样例输出
+		NO
+		1 1*/
+
+		var cave=[]
+		var issurvive=true
+		function survive(m,n){
+			for(var i=0; i<=n; i++){
+				if(i%m!=0){
+					cave.push(i)
+				}
+			}
+			//console.log(survive)
+			if(cave.length==0){
+				issurvive=false
+			}
+		}
+		survive(2,9)
+		console.log(issurvive?cave.length+":"+cave:"NO")
+
+		
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

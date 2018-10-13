@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+/*Bob是个很喜欢数字的孩子，现在他正在研究一个与数字相关的题目，我们知道一个数字的完美度是 把这个数字分解成三个整数相乘A*A*B（0<A<=B）的方法数，例如数字80可以分解成1*1*80，2*2*20 ，4*4*5，所以80的完美度是3；数字5只有一种分解方法1*1*5，所以完美度是1，假设数字x的完美度为d(x)，现在给定a，b（a<=b），请你帮Bob求出
+
+S，S表示的是从a到b的所有数字的流行度之和，即S=d(a)+d(a+1)+…+d(b)。
+
+ Input
+输入两个整数a，b（1<=a<=b<=10^15）
+ Output
+输出一个整数，表示从a到b的所有数字流行度之和。
+ Sample Input
+1 80 
+Sample Output
+107*/
+var arr=[]
+
+function perfect(n){
+    for(var i=1; i<=Math.pow(n,1/2); i++){
+        if(n%Math.pow(i,2)==0&&n/Math.pow(i,2)>=i){ 
+            var third=n/Math.pow(i,2)
+            arr.push([i,i,third])
+        }
+    }
+    return arr.length
+    
+}
+// console.log(perfect(80))
+
+
+var sum=0
+for(var k=1; k<=80; k++){
+    arr.length=0    //因为数组长度随着perfect的每一次调用不停的变长，如果是用+=的话就要清空之前的长度
+    sum+=perfect(k)
+    // sum=perfect(k)   
+    //数组arr长度每一次都保存了下来，
+    //k=1时，arr长度为1，perfect(k)=1；
+    //k=2时，arr长度为2，perfect(k)返回值是2，1+2=3
+}
+console.log(sum)
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

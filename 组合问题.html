@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>难度2</title>
+	<script>
+	﻿/*有n 种颜色的乒乓球，每种颜色的乒乓球的个数有任意多个，从中取m个球，问一共有多少种取法。
+	输入
+	每行2个正整数 n,m，(n,m)<32，以n和m都等于0结束。
+	输出
+	每组输出占一行，输出一共有多少种取法*/
+
+// n*(n-1)(n-2)……(n-i)  i<m	
+	
+	function son(n){
+		if(n<=1){
+			return 1
+		}else{
+			return n*son(n-1)
+		}
+	}
+	function mom(m){
+		if(m<=1){
+			return 1
+		}else{
+			return m*mom(m-1)
+		}
+	}
+	var result=0
+	function fn(n,m){
+	  result=son(n)/mom(m)
+	  return result
+	}
+	console.log(fn(5,3))
+
+
+
+
+					
+
+
+
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

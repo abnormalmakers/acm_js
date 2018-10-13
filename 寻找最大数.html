@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>难度2</title>
+	<script>
+		/*请在整数 n 中删除m个数字, 使得 余下的数字 按 原次序 组成的 新数最大，
+		比如当n=92081346718538，m=10时，则新的最大数是9888
+		输入
+		第一行输入一个正整数T，表示有T组测试数据
+		每组测试数据占一行，每行有两个数n,m（n可能是一个很大的整数，但其位数不超过100位，并且保证数据首位非0，m小于整数n的位数）
+		输出
+		每组测试数据的输出占一行，输出剩余的数字按原次序组成的最大新数*/
+
+		
+
+		//============================================================================
+		//思路
+
+		/*找到 m.length-n 前面最大的数；
+		再找到 m.length-n前面 m.length-n后面   最大的数======；
+		再在n-1里面找一个最大的数
+
+		先把m分割成字符串，push进数组，根据下标找到 m.length-n的数*/
+		var m=39169469879 //99989
+		var n=5
+		/*39169469879
+		1.在m.length-4里选出最大数==={3(9)16946} 9879 m.length-2    (9)  //至少留四个数
+		2.在( 9)的后面 m.length-3前面 里选出最大数===39{16(9)469} 879 i----m.length-3   (9) //至少留三个数
+		3.在( 9)的后面 m.length-2前面 里选出最大数===39169{46(9)8} 79 i----m.length-2   (9) //至少留两个数
+		4.在( 8)的后面 m.length-1前面 里选出最大数===39169469{(8)7} 9 i----m.length-1   (8) //至少留一个数
+		5.在( 7)的后面 m.length  前面 里选出最大数===391694698{79} i----m.length    (9) 
+
+
+		需要得到 
+		1.比较数组类数的大小
+		2.得到最大数的下标*/
+
+
+		
+		var mstr=m.toString()
+		var arr=mstr.split("")
+		var newarr=[]
+		for(var i=0; i<arr.length; i++){
+			 newarr.push(parseInt(arr[i]))
+			// console.log(typeof(arr[i]))
+			// console.log(typeof(newarr[i]))
+		}
+		console.log(newarr)
+
+		/*var max=Math.max.apply(null,newarr)
+		console.log(max)*/
+		for(var i=0; i<newarr.length-(n-1); i++){
+			var max1=Math.max.apply(null,newarr)
+		}
+		console.log(max1)
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

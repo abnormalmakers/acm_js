@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		/*在数据加密和数据压缩中常需要对特殊的字符串进行编码。给定的字母表A 由26 个小写英文字母组成A={a,b,…,z}。该字母表产生的升序字符串是指字符串中字母按照从左到右出现的次序与字母在字母表中出现的次序相同，且每个字符最多出现1 次。例如，a,b,ab,bc,xyz 等字符串都是升序字符串。现在对字母表A 产生的升序字符串按照字典序排列并编码如下。
+
+		1 a
+		2 b
+		… 
+		26 z
+		27 ab
+		28 ac
+		… 
+		对于一个升序字符串，迅速计算出它在上述字典中的编码。
+
+		 Input
+		输入数据第一行有一个整数n。接下来n行每行有1个升序字符串 
+		 Output
+		按输入顺序每个升序字符串输出它的编码，每个编码占一行. 
+		 Sample Input
+		2
+		a
+		ab
+		 Sample Output
+		1
+		27*/
+
+		var letter=["A","B","C","D","E","F","G","H","I",'J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+		var n=78
+		var result=""
+		if(n%letter.length==0){
+			result+=letter[letter.length-1]
+			for(var i=0; i<parseInt(n/letter.length)-1; i++){
+				result+=letter[n%letter.length+i]
+			}
+		}else{
+			for(var i=0; i<=parseInt(n/letter.length); i++){
+				result+=letter[n%letter.length-1+i]
+			}
+		}
+		
+		//console.log(result)
+		
+		var str="A"
+		var num=0
+		var arr=str.split("")
+
+		/*AB
+		1*Math.pow(26,1)+1*Math.pow(26,0)*/
+		
+		for(var i=0; i<letter.length; i++){
+			if(arr[0]==letter[i]){
+				num=(arr.length-1)*Math.pow(26,1)+(i+1)*Math.pow(26,0)
+			}
+		}
+
+
+		console.log(num)
+
+		
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

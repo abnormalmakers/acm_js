@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>难度2</title>
+	<script>
+		/*在多媒体数据处理中，数据压缩算法尤为重要。小媛上完课后就想自己发明一个数据压缩算法。她想呀想，终于想到一个方法。在多媒体数据中有很多数据都是重复的，所以她想把连续相同的数据用数据出现的次数和数据本身表示。例如：1 1 1 2 3 3 3 3 3  压缩后及为3 1 1 2 5 3（表示3个1，1个2和5个3）。有想法后小媛就希望把它用代码实现了。但是大家都知道小媛现在整天都忙着苦B的复习考研，连电脑都摸不到。所以她希望作为ACMer的你帮她写一下。
+		输入
+		输入包含多组数据，第一行一个数字T代表输入样例数。
+
+		每组样例开始一个数M < 10^7表示这组数据中数字的个数，接下来M个数表示要被压缩的数字（数字都不超过int表示的范围）。
+		输出
+		每组测试数据输出一行数字对，如上面描述的一样。两个数字之间用一个空格隔开。
+		样例输入
+		1
+		1 1 1 2 3 3 3 3 3 
+		样例输出
+		3 1 1 2 5 3 */
+		
+		var num=111233333
+		var str=num.toString()
+		var arr=str.split("")
+		//console.log(arr)
+		var obj={}
+		for(var i=0; i<arr.length; i++){
+			if(!obj[arr[i]]){
+				obj[arr[i]]=1
+			}else{
+				obj[arr[i]]++
+			}
+		}
+		console.log(obj)
+		var num=[]
+		var key=[]
+		for(var i in obj){
+			num.push(obj[i])
+			key.push(i)
+		}
+		console.log(num)
+		console.log(key)
+		var len=num.length
+		for(var i=0; i<len; i++){
+			num.splice(2*i+1,0,key[i])
+		}
+
+		console.log(num)
+		
+		var newstr=num.join(" ")
+		console.log(newstr)
+		window.onload=function(){
+			// a=document.getElementById('a')
+			// a.value=1
+			// a.setAttribute('value',2)
+			// console.log(a.value)
+			// console.log(a.getAttribute('value'))
+		}
+		
+		arr=[1,2,3]
+		arr1=arr
+		arr[0]=0
+		arr.push(4)
+		console.log(arr1)
+
+		
+		// a=1
+		// function f(){
+		// 	console.log("this is f")
+		// 	console.log(f.caller.name)
+		// }
+		// function fn(){
+		// 	a+=1
+		// 	f()
+
+		// }
+		// fn()
+		// console.log(fn.caller)
+		// console.log(a)
+
+		// js装饰器
+		function fn(f){
+	
+			console.log("this is fn")
+			function fs(){
+				console.log("this is fs")
+				f()
+			}
+			fs()
+		}
+
+		function f(){
+			console.log("this is f")
+		}
+		console.log(f)
+		fn(f)
+			
+
+
+	</script>
+	<style>
+		*{margin:0; padding:0;}
+		body{
+			overflow: hidden;
+		}
+		.box{
+			width:200px;
+			height: auto;
+			border:1px solid red;
+			padding:10px;
+			word-wrap:break-word;
+		}
+	</style>
+</head>
+<body>
+	<!-- <input type="text" id='a'> -->
+	<div class='box'>asdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasdasdadasd</div>
+
+	<form action="http://192.168.1.103:8000/login/" method='post'>
+<!--         {%csrf_token%} -->
+		<input type='hidden' name='csrfmiddlewaretoken' value='9vxRHJ0RbYf2JwBDXTx1yYxzNBxNOeGKwLCFw91twrV39Stw3wegftFiO1gHIr3h' />
+        <label for="user_name">用户名</label><input type="text" name='uname' id='user_name'>
+        <label for="">密码<input type="password" name='upass'></label>
+        <input type="submit" value='登录'>
+    </form>
+</body>
+</html>

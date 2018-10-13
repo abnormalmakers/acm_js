@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>难度2</title>
+	<script>
+		/*Dr.Kong设计了一个聪明的机器人卡多，卡多会对电子表格中的单元格坐标快速计算出来。单元格的行坐标是由数字编号的数字序号，而列坐标使用字母序号。观察字母序号，发现第1列到第26列的字母序号分别为A，B，…，Z，接着，第27列序号为AA，第28列为AB，依此类推。
+
+		样例输入
+		27  G   AA
+		样例输出
+		AA  7   27*/
+
+		/*X轴:zimu;
+		Y轴:shuzi;
+
+		n%26==zimu[i]
+		var n=79
+		var count=parseInt(n/26)*/
+
+
+			
+		
+		
+
+		var letter=["A","B","C","D","E","F","G","H","I",'J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+		var n=79
+		var result=""
+		//console.log(letter[n%letter.length-1])
+		if(n%letter.length==0){
+			for(var i=0; i<parseInt(n/letter.length); i++){
+				result+=letter[letter.length-1]
+			}
+		}else{
+			for(var i=0; i<=parseInt(n/letter.length); i++){
+				result+=letter[n%letter.length-1]
+			}
+		}
+
+		console.log(result)
+		
+
+		/*求number？
+		
+
+		A
+		1*Math.pow(26,0)
+
+		A A
+		1*Math.pow(26,1)+1*Math.pow(26,0)
+
+		A A A
+		2*Math.pow(26,1)+1*Math.pow(26,0)
+
+		A A A A
+		3*Math.pow(26,1)+1*Math.pow(26,0)*/
+
+		var str="ZZZ"
+		var number=0
+		var arr=str.split("")
+		if(arr.length==1){
+			for(var i=0; i<letter.length; i++){
+				if(arr[0]==letter[i]){
+					number=i+1
+				}	
+			}
+		}
+		if(arr.length>1){
+			for(var i=0; i<letter.length; i++){
+				if(arr[0]==letter[i]){
+					number=(arr.length-1)*Math.pow(letter.length,1)+(i+1)*Math.pow(letter.length,0)
+				}
+			}
+		}
+		console.log(number)
+
+		
+		
+		
+
+		//console.log(fn(28))
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

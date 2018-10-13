@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		/* Problem Description
+		组合数 C(N,M)=N!/(M!*(N-M)!). 问题是求 C(N,M)中不同的素因子的个数 
+		 Input
+		输入包含多组数据(数据组数<= 10)，每组数据只有一行 2个正整数表示N和M (1 <= M <= N <= 1000000) 
+		N=M=0表示数据结束.
+
+		 Output
+		输出一行答案,表示C(N,M)中不同素因子个数. 
+		 Sample Input
+		7 4
+		0 0
+		 Sample Output
+		2*/
+		var mom=9
+		var son=4
+		function fn(n){
+			if(n==1){
+				return 1
+			}else{
+				return n*fn(n-1)
+			}
+		}
+		var num=fn(mom)/(fn(son)*fn(mom-son))
+		console.log(num)
+		var arr=[]
+		for(var i=1; i<=num; i++){
+			if(num%i==0){
+				arr.push(i)
+			}
+		}
+		function isPrime(n){
+			if(n==1){
+				return false
+			}
+			for(var i=2; i<n; i++){
+				if(n%i==0){
+					return false
+				}
+			}
+			return true
+		}
+		var newarr=[]
+		for(var i=0; i<arr.length; i++){
+			if(isPrime(arr[i])){
+				newarr.push(arr[i])
+			}
+		}
+		console.log(newarr)
+		
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

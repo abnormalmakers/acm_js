@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>去重排序</title>
+	<script type="text/javascript">
+
+		/*描述
+		小明的老师布置了一份调查作业，小明想在学校中请一些同学一起做一项问卷调查，聪明的小明为了实验的客观性，想利用自己的计算机知识帮助自己。他先用计算机生成了N个1到1000之间的随机整数（0<N≤1000），对于其中重复的数字，只保留一个，把其余相同的数去掉，不同的数对应着不同的学生的学号。然后再把这些数从小到大排序，按照排好的顺序去找同学做调查。请你协助明明完成“去重”与“排序”的工作。*/
+		// for(var n=1; n<=10; n++){
+		// 	arr.push(parseInt(Math.random()*1000))
+		// }
+
+
+		//先去重在排序
+		var arr=[12,34,54,22,33,44,33,12,34]
+		
+
+		var newarr=[]
+
+
+
+
+		var obj={
+			/*arr:[
+				"12":1
+			]*/
+		}
+		for(var i=0; i<arr.length; i++){
+			if(!obj[arr[i]]){
+				obj[arr[i]]=1
+				console.log(arr[i],obj[arr[i]])
+				newarr.push(arr[i])		
+			}
+		}
+		for(var i in obj){
+			console.log(i+":"+obj[i])
+		}
+
+		newarr.sort(function(a,b){
+			return a-b
+		})
+		console.log(newarr)
+		
+		
+
+	
+
+		
+
+
+		//先排序再去重
+
+
+		//冒泡排序再去重(sort)
+		// for(var i=0; i<arr.length; i++){
+		// 	for(var j=0; j<arr.length-1-i; j++){	
+		// 		if(arr[j]>arr[j+1]){
+		// 			var item=arr[j]
+		// 			arr[j]=arr[j+1]
+		// 			arr[j+1]=item
+		// 		}
+		// 	}	
+		// }
+		// for(var i=0; i<arr.length; i++){
+		// 	if(arr[i]==arr[i+1]){
+		// 		arr.splice(i,1)
+		// 	}
+		// }
+		// console.log(arr)
+
+
+
+		//自带的sort排序再去重
+		// function num(a,b){
+		// 	return a-b
+		// }
+		// arr.sort(num)
+		// for(var i=0; i<arr.length; i++){
+		// 	if(arr[i]==arr[i+1]){
+		// 		arr.splice(i,1)
+		// 	}
+		// }
+		// console.log(arr)
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

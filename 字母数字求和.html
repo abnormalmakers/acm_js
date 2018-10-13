@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	　　/*我们定义f(A)= 1,f(a)= -1,f(B)= 2,f(b)= -2,…f f(Z)= 26 (z)= -26;
+	　　给你一个字母x和y,你应该输出y + f(x)的结果。
+	　　输入描述:
+	　　在第一行,包含许多T。然后T行,每一行就是一个很好的例子。每个案例都包含一个字母和一个数字。
+	　　
+	　　
+	　　输出描述:
+	　　为每一个情况下,你应该y + f(x)的结果在一条线。
+		输入例子:
+		6
+		R 1  18+1
+		P 2  16+2
+		G 3
+		r 1
+		p 2
+		g 3
+
+		输出例子:
+		19
+		18
+		10
+		-17
+		-14
+		-4*/
+		
+
+		var big=[]
+		for(var i=65; i<91; i++){
+			big.push(String.fromCharCode(i))
+		}
+		var small=[]
+		for(var i=97; i<123; i++){
+			small.push(String.fromCharCode(i))
+		}
+		console.log(small)
+		function f(x){
+			var reg=/[a-zA-Z]/
+			if(reg.test(x)){
+				var bigreg=/[A-Z]/
+				if(bigreg.test(x)){
+					for(var i=0; i<big.length; i++){
+						if(big[i]==x){
+							return i+1
+						}
+					}
+				}else{
+					for(var i=0; i<small.length; i++){
+						if(small[i]==x){
+							return -(i+1)
+						}
+					}
+				}
+			}
+			return false
+		}
+		var y=2 
+		var x="p"
+		alert(y+f(x))
+
+
+
+		
+		
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

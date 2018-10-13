@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>难度0</title>
+	<script type="text/javascript">
+/*<!-- 有一行数字 ,现在定义 0表示空格，即这行数字被分割成若干个数 要求将这些数按照从小到大顺序排列，若该行数字全为零 则表示为零，两个数字之间可能有多个0，开头和结尾可能都有0，所有的0都看成空格，数字的个数不超过100。 -->*/
+
+	/*<!--
+	 000	
+	00123
+	12301
+	1230
+	样例输出
+	0
+	123
+	1 123
+	123 -->*/
+	/*var str = 'sfsffdgdsrgergsdga';
+	var sRex = 'ff';
+	var reg = new RegExp(sRex);
+	alert(str.match(reg));*/
+
+/*	var regS = new RegExp("\\$","g");
+alert(str.replace(regS,"#"));*/
+
+	var num=123//
+	console.log(num)
+	var result=""
+	var str=num.toString()
+	//console.log(str)
+	if(str==0){
+		result=str
+	}else{
+		var arr=str.split("0")
+		
+		arr.sort(function(a,b){
+			return a-b
+		})
+		console.log(arr)
+		var newstr=arr.join(" ")
+	}
+	
+	console.log(newstr)
+
+
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

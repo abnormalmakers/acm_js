@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		/*topcoder工作室的PIAOYIi超级爱吃糖果，现在他拥有一大堆不同种类的糖果，他准备一口气把它们吃完，可是他有一个习惯，他不喜欢同一种类的糖果连着吃，他喜欢先吃一种，然后再吃另一种。可是PIAOYI不知道是否存在一种顺序能把这些糖果吃完，聪明的你可以帮助他吗？
+输入
+第一行有一个整数N，接下来有N组数据，第一行有一个整数M（0<M<1000000），第二行是M个数，表示M种糖果的数目Mi（0<Mi<1000000）.
+输出
+对于每组数据，输出一行，包含一个“Yes”或者“No”。
+3
+1 1 5
+5
+1 2 3 4 5
+4
+1 2 1
+*/
+//思路：最多的-第二多的<=糖果种类 如果满足YES
+		// var category=4
+		// var onequantity=5
+		// var	twoquantity=1
+		// var	threequantity=1
+		// var	fourquantity=1
+
+
+		var arr=[5,1,3,1] //不同种类糖果数量
+		
+		var max=Math.max.apply(null,arr)
+		//console.log(max)
+		var newarr=arr.sort(function(a,b){
+			return b-a
+		})
+		var aa=newarr[0]-newarr[1]
+		if(arr.length>=aa){
+			console.log("YES")
+		}else{
+			console.log("No")
+		}
+
+		
+
+
+
+
+
+	</script>
+
+</head>
+<body>
+	
+</body>
+</html>

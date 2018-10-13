@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>难度3</title>
+	<script>
+	/*找出从自然数1、2、... 、n（0<n<10）中任取r(0<r<=n)个数的所有组合。
+	输入
+	输入n、r。
+	输出
+	按特定顺序输出所有组合。
+	特定顺序：每一个组合中的值从大到小排列，组合之间按逆字典序排列。
+	样例输入
+	5 3
+	样例输出
+	543
+	542
+	541
+	532
+	531
+	521
+	432
+	431
+	421
+	321*/
+		var arr = [1,2,3,4,5];
+		//5选3
+		var r3 = [];
+		var i, j, k, a, m, n;
+		arr.sort(function(a,b){
+			return b-a
+		})
+		for(i=0;i<3;i++){ 
+			for(j=i+1;j<4;j++){ 
+				for(k=j+1;k<5;k++){ 
+					r3.push([arr[i], arr[j], arr[k]]);
+				}
+			}
+		}
+		//console.log(r3)
+		var newarr=[]
+		for(var i=0; i<r3.length; i++){
+			/*r3[i].sort(function(a,b){
+				return b-a
+			})*/
+			newarr.push(r3[i].join(""))
+		}
+		/*newarr.sort(function(a,b){
+			return b-a
+		})*/
+		console.log(newarr)
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>难度2</title>
+	<script>
+		/*有一个整数n，把从1到n的数字无重复的排列成环，且使每相邻两个数（包括首尾）的和都为素数，称为素数环。
+		有多组测试数据，每组输入一个n(0<n<20)，n=0表示输入结束。
+		输出
+		每组第一行输出对应的Case序号，从1开始。
+		如果存在满足题意叙述的素数环，从小到大输出。
+		否则输出No Answer。
+		样例输入
+		6
+		8
+		3
+		0
+		样例输出
+		Case 1:
+		1 4 3 2 5 6
+		1 6 5 2 3 4
+		Case 2:
+		1 2 3 8 5 6 7 4
+		1 2 5 8 3 4 7 6
+		1 4 7 6 5 8 3 2
+		1 6 7 4 3 8 5 2
+		Case 3:
+		No Answer*/
+		function fn(n){
+			if(n<=2){
+				return true
+			}
+			for(var i=2; i<n; i++){
+				if(n%i==0){
+					return false
+				}
+			}
+			return true	
+		}
+		console.log(fn(5))
+		var arr=[]
+		for(var i=1; i<=6; i++){
+			arr.push(i)
+		}
+		//console.log(arr)
+		for(var i=0; i<arr.length; i++){
+			arr[i]+arr[i]
+		}
+
+
+		
+		
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

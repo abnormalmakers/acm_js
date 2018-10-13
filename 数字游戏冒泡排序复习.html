@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+/*给一个N位的正整数，该数不包含前导0，先让你调整其中每个数字的位置，得到另一个n位的数，并且使得这个数越小越好，而且这个数不能包含前导0。比如543210可以变成102345，而12345保持不变才是最优结果。
+
+ Input
+第一行一个整数T（T<=100)，表示有T组数据。
+
+
+每组数据先输入一行一个整数N(1<=N<=100)，表示位数，接下来一行输入一个N位的不包含前导0的正整数。
+
+ Output
+每组数据对应一行输出，即调整数字位置后能得到的最小的不包含前导0的数。
+
+ Sample Input
+3
+6
+543210
+3
+123
+3
+231
+ Sample Output
+102345
+123
+123*/
+
+var num=54321
+var str=num.toString()
+var arr=str.split("")
+/*for(var i=0; i<arr.length; i++){
+    if(arr[i]>arr[i+1]){
+        var item=arr[i]
+        arr[i]=arr[i+1]
+        arr[i+1]=item
+    }
+}
+for(var i=0; i<arr.length-1; i++){
+    if(arr[i]>arr[i+1]){
+        var item=arr[i]
+        arr[i]=arr[i+1]
+        arr[i+1]=item
+    }
+}
+for(var i=0; i<arr.length-2; i++){
+    if(arr[i]>arr[i+1]){
+        var item=arr[i]
+        arr[i]=arr[i+1]
+        arr[i+1]=item
+    }
+}
+for(var i=0; i<arr.length-3; i++){
+    if(arr[i]>arr[i+1]){
+        var item=arr[i]
+        arr[i]=arr[i+1]
+        arr[i+1]=item
+    }
+}
+for(var i=0; i<arr.length-4; i++){
+    if(arr[i]>arr[i+1]){
+        var item=arr[i]
+        arr[i]=arr[i+1]
+        arr[i+1]=item
+    }
+}*/
+//综上，5个for循环可以嵌套在一个循环里
+
+for(var i=0; i<arr.length; i++){
+    for(var j=0; j<arr.length-1-i; j++){
+        if(arr[j]>arr[j+1]){
+            var item=arr[j]
+            arr[j]=arr[j+1]
+            arr[j+1]=item
+        }
+    }
+    if(arr[0]==0&&arr[i]!=0){
+        var k=arr[0]
+        arr[0]=arr[i]
+        arr[i]=k
+        break
+   } 	
+}
+//console.log(arr)
+   
+   var newstr=arr.join("")
+   console.log(newstr)
+
+
+
+</script>
+</head>
+<body>
+	
+</body>
+</html>

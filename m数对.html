@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>难度2</title>
+	<script>
+	/*最近小M上课老瞌睡，落下许多功课，现在就遇到了一个问题：
+	当一个数对（x，y）中有一个数大于或等于m时（当然有两个更好了），我们称它为m数对。一个数对（x，y）可以经过一步操作变成变成（x，x+y）或（x+y，y）数对。现在计算一个数对（x，y）变成m数对最少的操作次数吗？ 你能帮助小M吗，输出最小的操作次数，如果不能变成m数对输出-1。
+	输入
+	输入x，y，m，( -10^18 ≤ x , y , m ≤ 10^18 )
+	输出
+	输出结果。
+	样例输入
+	1  2  5
+	0 -1  5
+	样例输出
+	2
+	-1*/
+
+	var arr=[1,2]
+	var m=27
+	var newarr=[23,45,67,12,45]
+	console.log(Math.max(newarr))
+	var flag=0
+
+		while(Math.max.apply(null,arr)<m){
+			flag++
+			arr.sort(function(a,b){
+				return a-b
+			})
+			var max=Math.max.apply(null,arr)
+			var min=Math.min.apply(null,arr)
+			arr=[arr[0]+max,arr[1]]
+		}
+	
+	console.log(flag)
+
+
+	
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

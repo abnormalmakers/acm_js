@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>难度2</title>
+	<script>
+		/*周末了，软件ACM的队员准备玩玩游戏，娱乐一下，CY想了一个好主意，所有队员站成一个圈，从1开始报数，凡是报出指定数字的人要出列，有人出列后，下个人重新从1开始报数。最后一位“幸存者”要给大家表演个节目。由于队员正在不断的壮大，C小加又想知道他是否需要准备表演，请你设计个程序，帮他确定他是否是“幸存者”。
+		输入
+		第一行是n，有n次游戏，第二行是m，x，表示某次游戏有m个人，指定被请出列的数字为x。其中n<100,m<1000
+		输出
+		最后幸存的那位的原来的号码
+
+		样例输入
+		2
+		10 5
+		6 4
+		样例输出
+		3
+		5*/
+		var arr=[]
+		for(var i=1; i<101; i++){
+			arr.push(i)
+		}
+		var flag=0
+		while(arr.length>1){
+			var out=0
+			var len=arr.length
+			for(var i=0; i<len; i++){
+				flag++
+				if(flag==3){
+					flag=0
+					arr.splice(i-out,1)
+					out++
+				}
+			}
+		}
+		console.log(arr)
+
+		
+		
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
